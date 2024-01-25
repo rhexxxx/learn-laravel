@@ -40,7 +40,7 @@
                         </small>
                     </p>
                       <p class="card-text">{{ $post->excerpt }}</p>
-                      <a href="/post/{{ $post->slug }}" class="btn btn-primary">Read More</a>
+                      <a href="/post/{{ $post->slug }}" class="btn btn-success">Read More</a>
                     </div>
                 </div>
             </div>
