@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -23,14 +24,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "about",
-        "name" => 'Rhexxx',
-        "email" => "rheino.3223@gmail.com",
-        "image" => "jl.png"
-    ]);
-});
+Route::get('/about',[AboutController::class, 'index']);
 
 Route::get('/blog', [PostController::class, 'index']);
 
@@ -44,16 +38,15 @@ Route::get('/categories', function(){
 });
 
 Route::get('/categories/{category:slog}', function(Category $category ){
-    return view('category' , [
-        'title' => $category->name,
-        'posts' => $category->posts,
-        'category' =>$category->name
+    return view('post' , [
+        'title' => "post by Category: $category->name",
+        'post' => $category->posts,
     ]);
 });
 
 Route::get('/author/{author:username}', function(User $author){
     return view('post' , [
-        'title' => 'User Post',
+        'title' => "Post by Author: $author->name",
         'post' => $author->post,
         'ver' => true
     ]);
