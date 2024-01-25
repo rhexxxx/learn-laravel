@@ -12,6 +12,7 @@ class PostController extends Controller
     {
         return view('post',[
             "title" => 'All Post',
+            'active' => 'posts',
             // 'post' => Post::all()
             'post' => Post::latest()->get()
         ]);  
@@ -21,6 +22,7 @@ class PostController extends Controller
     {
         return view('posts', [
             "title" => "Single Post",
+            'active' => 'posts',
             "post" => $post
         ]);
     }

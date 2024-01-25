@@ -45,8 +45,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'Design UI/UX',
-            'slog' => 'design-ui-ux'
+            'name' => 'School',
+            'slog' => 'school'
         ]);
 
         Category::create([
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             'slog' => 'food'
         ]);
 
-        Post::factory(20)->create();
+        Post::factory(30)->create();
 
         // Post::create([
         //     'title' => 'judul Pertama',

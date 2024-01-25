@@ -20,7 +20,8 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('home' ,[
-        "title" => "home"
+        "title" => "home",
+        'active' => 'home'
     ]);
 });
 
@@ -33,6 +34,7 @@ Route::get('post/{post:slug}', [PostController::class, 'show']);
 Route::get('/categories', function(){
     return view('categories' , [
         'title' => 'Post Categories',
+        'active' => 'categories',
         'categories' => Category::all()
     ]);
 });
@@ -40,6 +42,7 @@ Route::get('/categories', function(){
 Route::get('/categories/{category:slog}', function(Category $category ){
     return view('post' , [
         'title' => "post by Category: $category->name",
+        'active' => 'category',
         'post' => $category->posts->load('category', 'author')
     ]);
 });

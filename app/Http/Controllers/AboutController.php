@@ -11,6 +11,7 @@ class AboutController extends Controller
         return view('about', [
             "title" => "about",
             "name" => 'Rhexxx',
+            'active' => 'about',
             "email" => "rheino.3223@gmail.com",
             "image" => "jl.png"
         ]);

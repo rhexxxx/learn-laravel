@@ -8,7 +8,6 @@
                 <a class="text-decoration-none" href="/categories/{{ $category->slog }}">{{ $category->name }}</a>      
             </li>
         </ul>
-            
     @endforeach
 </div>
 @endsection
