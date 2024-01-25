@@ -50,8 +50,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'Matematika',
-            'slog' => 'matematika'
+            'name' => 'Food',
+            'slog' => 'food'
         ]);
 
         Post::factory(20)->create();
