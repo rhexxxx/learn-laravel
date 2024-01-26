@@ -3,6 +3,17 @@
 <div class="container mt-5">
     <h1>{{ $title }}</h1>
 
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="/blog" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search..." name="search">
+                    <button class="btn btn-danger" type="submit">Search</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+
     @if($post->count())
         <div class="card mb-3">
             <img src="https://source.unsplash.com/1200x400?{{ $post[0]->category->name }}" class="card-img-top" alt="{{ $post[0]->category->name }}" class="card-img-top">
@@ -17,9 +28,6 @@
             <a href="/post/{{ $post[0]->slug }}" class="btn btn-primary">Read More</a>
             </div>
         </div>
-    @else
-        <p class="text-center fs-4">No Post found.</p>
-    @endif
 
     <div class="container">
         <div class="row">
@@ -48,4 +56,8 @@
         </div>
     </div>
 </div>
+
+@else
+<p class="text-center fs-4">No Post found.</p>
+@endif
 @endsection

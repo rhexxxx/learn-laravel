@@ -16,7 +16,7 @@
                         </article>
                     
                 </article>
-                <a href="/blog" class="btn btn-primary">Back</a>
+                <a href="/blog" class="btn btn-primary my-5 px-3">Back</a>
             </div>
         </div>
     </div>
