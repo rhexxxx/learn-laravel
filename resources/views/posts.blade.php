@@ -8,7 +8,7 @@
                 <h2>{{ $post->title }}</h2>
                 <article>
                         
-                        <p>By <a href="/author/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slog }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
+                        <p>By <a href="/blog?author={{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a> in <a href="/blog?category={{ $post->category->slog }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
                         <img class="img-fluid" src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" alt="{{ $post->category->name }}">
 
                         <article class="my-3 fs-5">

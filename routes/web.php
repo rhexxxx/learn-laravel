@@ -39,18 +39,6 @@ Route::get('/categories', function(){
     ]);
 });
 
-Route::get('/categories/{category:slog}', function(Category $category ){
-    return view('post' , [
-        'title' => "post by Category: $category->name",
-        'active' => 'category',
-        'post' => $category->posts->load('category', 'author')
-    ]);
-});
 
-Route::get('/author/{author:username}', function(User $author){
-    return view('post' , [
-        'title' => "Post by Author: $author->name",
-        'active' => 'blog',
-        'post' => $author->post->load('category', 'author')
-    ]);
-});
+
+
