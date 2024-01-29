@@ -20,24 +20,24 @@
         </div>
     </div>
 
-    @if($post->count())
+    @if($posts->count())
         <div class="card mb-3">
-            <img src="https://source.unsplash.com/1200x400?{{ $post[0]->category->name }}" class="card-img-top" alt="{{ $post[0]->category->name }}" class="card-img-top">
+            <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}" class="card-img-top">
             <div class="card-body text-center">
-            <a href="/post/{{ $post[0]->slug }}" class="text-decoration-none text-dark"><h2 class="card-title">{{ $post[0]->title }}</h2></a>
+            <a href="/post/{{ $posts[0]->slug }}" class="text-decoration-none text-dark"><h2 class="card-title">{{ $posts[0]->title }}</h2></a>
             <p>
                 <small class="text-muted">
-                   By <a href="/blog?author={{ $post[0]->author->username }}" class="text-decoration-none text-dark">{{ $post[0]->author->name }}</a> in <a class="text-decoration-none" href="/blog?category={{ $post[0]->category->slog }}">{{ $post[0]->category->name }} </a> {{ $post[0]->created_at->diffForHumans() }}
+                   By <a href="/blog?author={{ $posts[0]->author->username }}" class="text-decoration-none text-dark">{{ $posts[0]->author->name }}</a> in <a class="text-decoration-none" href="/blog?category={{ $posts[0]->category->slog }}">{{ $posts[0]->category->name }} </a> {{ $posts[0]->created_at->diffForHumans() }}
                 </small>
             </p>
-            <p class="card-text">{{ $post[0]->excerpt }}</p>
-            <a href="/post/{{ $post[0]->slug }}" class="btn btn-primary">Read More</a>
+            <p class="card-text">{{ $posts[0]->excerpt }}</p>
+            <a href="/post/{{ $posts[0]->slug }}" class="btn btn-primary">Read More</a>
             </div>
         </div>
 
     <div class="container">
         <div class="row">
-            @foreach($post->skip(1) as $post)
+            @foreach($posts->skip(1) as $post)
             <div class="col-md-4 mb-3">
                 <div class="card">
                     <a href="/blog?category={{ $post->category->slog }}" class="text-decoration-none text-white">
@@ -67,5 +67,5 @@
 <p class="text-center fs-4">No Post found.</p>
 @endif
 
-{{-- {{ $post->links() }} --}}
+{{ $posts->links() }}
 @endsection
