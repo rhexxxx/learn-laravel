@@ -23,23 +23,16 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 @auth
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                    <li class="nav-item d-flex">
+                        <a class="nav-link dropdown-toggle" href="/dashboard" id="navbarDropdown">
                             Welcome Back!, {{ auth()->user()->username }}
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">My Dashborad</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Log Out </a></li>
-                        </ul>
-                      </li>
                         <form action="/logout" method="post">
                           @csrf
-                          <button type="submit" class="nav-item"><i class="bi bi-box-arrow-right"></i> Log Out</button>
+                          <button type="submit" class="nav-item nav-link bg-transparent border-0"><i class="bi bi-box-arrow-right"></i> Log Out</button>
                         </form>
+                    </li>
+                        
                     
                 @else                                                                                                    
                     <li>
